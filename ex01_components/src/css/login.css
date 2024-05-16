@@ -1,0 +1,22 @@
+body {
+  height: 3000px;
+}
+input{
+  width: 300px;
+  height: 70px;
+  border :1px solid black;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+.btn_login{
+  width: 300px;
+  height: 70px;
+  border: none;
+  background-color: black;
+  color: white;
+}
+.loginForm{
+  display: flex;
+  flex-flow: column;
+  width: 300px;
+}
