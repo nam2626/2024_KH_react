@@ -20,3 +20,13 @@ input{
   flex-flow: column;
   width: 300px;
 }
+
+.true{
+  font-weight: bold;
+  color: blue;
+}
+
+.false{
+  font-weight: bold;
+  color: red;
+}
