@@ -1,3 +1,4 @@
+import CheckTypes from 'prop-types';
 export default (props) => {
   console.log(props);
   //ok_area 영역에 props에 있는 내용을 출력
@@ -19,4 +20,9 @@ export default (props) => {
       </div>
     </div>
   );
+}
+
+//Props Type Check
+PropsEx.propTypes = {
+
 }
