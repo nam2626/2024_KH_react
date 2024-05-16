@@ -24,9 +24,9 @@ export default function ButtonOK(props) {
 
 //Props Type Check
 ButtonOK.propTypes = {
-  name : CheckTypes.string,
+  name : CheckTypes.string.isRequired,
   age : CheckTypes.number
 };
-ButtonOK.defaultProps={
-  number : 100
-};
+// ButtonOK.defaultProps={
+//   number : 100
+// };
