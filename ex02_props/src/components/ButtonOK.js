@@ -1,5 +1,5 @@
 import CheckTypes from 'prop-types';
-export default (props) => {
+export default function ButtonOK(props) {
   console.log(props);
   //ok_area 영역에 props에 있는 내용을 출력
   const btnOkClick = () => {
@@ -23,6 +23,10 @@ export default (props) => {
 }
 
 //Props Type Check
-PropsEx.propTypes = {
-
-}
+ButtonOK.propTypes = {
+  name : CheckTypes.string,
+  age : CheckTypes.number
+};
+ButtonOK.defaultProps={
+  number : 100
+};
