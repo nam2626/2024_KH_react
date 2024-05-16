@@ -3,7 +3,9 @@ function LoginForm(){
   const loginClick = () => {
     // alert('로그인 버튼 클릭');
     // 아이디와 비밀번호를 입력한 input 태그 접근
-
+    let id = document.querySelector('#id');
+    let pass = document.querySelector('#pass');
+    alert(id.value + ' ' + pass.value);
   }
   return (
     <div className='loginForm'>
