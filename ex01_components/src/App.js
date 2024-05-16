@@ -1,5 +1,6 @@
 import ButtonOK from "./components/ButtonOK";
 import LoginForm from "./components/LoginForm";
+import TextBox from "./components/TextBox";
 /* 
   JSX 규칙
   1. 반드시 부모요소 태그 하나로 감싸야함
@@ -26,6 +27,8 @@ function App() {
       <ButtonOK/>
       <hr/>
       <LoginForm/>
+      <hr/>
+      <TextBox />
     </div>
   );
 }
