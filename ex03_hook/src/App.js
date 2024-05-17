@@ -2,6 +2,7 @@ import CountComponent from "./components/CountComponent";
 import NoStateComponent from "./components/NoStateComponent";
 import StateComponent from "./components/StateComponent";
 import './App.css';
+import ListComponent from "./components/ListComponent";
 function App() {
   return (
     <div>
@@ -10,6 +11,8 @@ function App() {
       <StateComponent />
       <hr></hr>
       <CountComponent/>
+      <hr></hr>
+      <ListComponent />
     </div>
   );
 }
