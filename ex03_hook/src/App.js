@@ -4,6 +4,7 @@ import StateComponent from "./components/StateComponent";
 import './App.css';
 import ListComponent from "./components/ListComponent";
 import ColorToggle from "./components/ColorToggle";
+import RefComponent from "./components/RefComponent";
 function App() {
   return (
     <div>
@@ -16,6 +17,8 @@ function App() {
       <ListComponent />
       <hr></hr>
       <ColorToggle/>
+      <hr></hr>
+      <RefComponent/>
     </div>
   );
 }
