@@ -3,6 +3,7 @@ import NoStateComponent from "./components/NoStateComponent";
 import StateComponent from "./components/StateComponent";
 import './App.css';
 import ListComponent from "./components/ListComponent";
+import ColorToggle from "./components/ColorToggle";
 function App() {
   return (
     <div>
@@ -13,6 +14,8 @@ function App() {
       <CountComponent/>
       <hr></hr>
       <ListComponent />
+      <hr></hr>
+      <ColorToggle/>
     </div>
   );
 }
