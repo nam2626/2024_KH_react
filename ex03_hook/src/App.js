@@ -5,6 +5,8 @@ import './App.css';
 import ListComponent from "./components/ListComponent";
 import ColorToggle from "./components/ColorToggle";
 import RefComponent from "./components/RefComponent";
+import RangeComponent from "./components/RangeComponent";
+import ColorPicker from "./components/ColorPicker";
 function App() {
   return (
     <div>
@@ -19,6 +21,10 @@ function App() {
       <ColorToggle/>
       <hr></hr>
       <RefComponent/>
+      <hr></hr>
+      <RangeComponent/>
+      {/* <hr></hr>
+      <ColorPicker/> */}
     </div>
   );
 }
