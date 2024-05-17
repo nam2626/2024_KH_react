@@ -1,5 +1,6 @@
 import ButtonOK from "./components/ButtonOK";
 import CheckComp from "./components/CheckComp";
+import ItemList from "./components/ItemList";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
       <ButtonOK name='김철수' age={20}/>
       <hr></hr>
       <CheckComp/>
+      <hr></hr>
+      <ItemList/>
     </div>
   );
 }

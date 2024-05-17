@@ -1,6 +1,6 @@
 export default function CheckComp() {
   const checkedStatus = () => {
-    const status = document.querySelector('#chk').checked;
+    const status = document.querySelector('#chk').checked;``
     console.log(status);
     if(status){
       alert('하단에 체크박스에 체크가 되었습니다.');
