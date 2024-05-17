@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import ItemComponent from "./ItemComponent";
 
 export default () => {
   let [list, setList] = useState([]);
@@ -17,6 +18,7 @@ export default () => {
       <input type="text" ref={txt}/>
       <button onClick={addItem}>추가</button>
       <hr></hr>
+      {list.map((obj) => <ItemComponent key={obj.id} id={obj.id} val={obj.val} deleteItem={deleteItem} />)}
     </>
   ); 
 }
