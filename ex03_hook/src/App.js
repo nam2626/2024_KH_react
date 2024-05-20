@@ -8,6 +8,7 @@ import RefComponent from "./components/RefComponent";
 import RangeComponent from "./components/RangeComponent";
 import ColorPicker from "./components/ColorPicker";
 import LoginForm from "./components/LoginForm";
+import Effect from "./components/Effect";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
       <ColorPicker/>
       <hr></hr>
       <LoginForm/>
+      <hr></hr>
+      <Effect/>
     </div>
   );
 }
