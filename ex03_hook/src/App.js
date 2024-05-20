@@ -7,6 +7,7 @@ import ColorToggle from "./components/ColorToggle";
 import RefComponent from "./components/RefComponent";
 import RangeComponent from "./components/RangeComponent";
 import ColorPicker from "./components/ColorPicker";
+import LoginForm from "./components/LoginForm";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
       <RangeComponent/>
       <hr></hr>
       <ColorPicker/>
+      <hr></hr>
+      <LoginForm/>
     </div>
   );
 }
