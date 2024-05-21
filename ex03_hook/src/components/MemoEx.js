@@ -44,12 +44,16 @@ export default () => {
     setDate(new Date());
   }, 1000);
 
+  const ResultComponentMemo = useMemo(()=>{
+    return <ResultComponent arr={num_list}/>;
+  },[num_list]);
+
   return (
     <div>
       <p>{date.toLocaleString()}</p>
       <input type='text' ref={txtNum}/>
       <button onClick={addNumber}>추가</button><br></br>
-      <ResultComponent arr={num_list}/>
+      {ResultComponentMemo}
     </div>
   );
 }
