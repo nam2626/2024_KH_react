@@ -10,6 +10,7 @@ import ColorPicker from "./components/ColorPicker";
 import LoginForm from "./components/LoginForm";
 import Effect from "./components/Effect";
 import MemoEx from "./components/MemoEx";
+import CallBakEx from "./components/CallBackEx";
 
 function App() {
   return (
@@ -33,8 +34,9 @@ function App() {
       <LoginForm/>
       <hr></hr>
       <Effect/>
-      <hr/> */}
-      <MemoEx/>
+      <hr/> 
+      <MemoEx/>*/}
+      <CallBakEx/>
     </div>
   );
 }
