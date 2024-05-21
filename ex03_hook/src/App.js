@@ -9,11 +9,12 @@ import RangeComponent from "./components/RangeComponent";
 import ColorPicker from "./components/ColorPicker";
 import LoginForm from "./components/LoginForm";
 import Effect from "./components/Effect";
+import MemoEx from "./components/MemoEx";
 
 function App() {
   return (
     <div>
-      <NoStateComponent/>
+      {/* <NoStateComponent/>
       <hr></hr>
       <StateComponent />
       <hr></hr>
@@ -32,6 +33,8 @@ function App() {
       <LoginForm/>
       <hr></hr>
       <Effect/>
+      <hr/> */}
+      <MemoEx/>
     </div>
   );
 }
