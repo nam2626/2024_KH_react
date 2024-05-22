@@ -6,7 +6,7 @@ function reducer(state, action) {
     case 'INCREMENT':
       return {...state, value : state.value + 1};
     case 'DECREMENT':
-      return {...state, value : state.value - 1};
+      return {...state, value : state.value - action.payload};
     default:
       return state;
   }
@@ -17,8 +17,8 @@ export default function CounterReducer() {
   return (
     <div>
       <h2>Count : {count.value}</h2>
-      <button>증가</button>
-      <button>감소</button>
+      <button onClick={() => dispatch({type:'INCREMENT'})}>증가</button>
+      <button onClick={() => dispatch({type:'DECREMENT', payload : 2})}>감소</button>
     </div>
   );
 }

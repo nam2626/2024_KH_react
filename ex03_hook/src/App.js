@@ -11,6 +11,7 @@ import LoginForm from "./components/LoginForm";
 import Effect from "./components/Effect";
 import MemoEx from "./components/MemoEx";
 import CallBakEx from "./components/CallBackEx";
+import CounterReducer from "./components/CounterReducer";
 
 function App() {
   return (
@@ -35,8 +36,9 @@ function App() {
       <hr></hr>
       <Effect/>
       <hr/> 
-      <MemoEx/>*/}
-      <CallBakEx/>
+      <MemoEx/>
+      <CallBakEx/>*/}
+      <CounterReducer/>
     </div>
   );
 }
