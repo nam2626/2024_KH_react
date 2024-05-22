@@ -12,6 +12,7 @@ import Effect from "./components/Effect";
 import MemoEx from "./components/MemoEx";
 import CallBakEx from "./components/CallBackEx";
 import CounterReducer from "./components/CounterReducer";
+import HookReducer from "./components/HookReducer";
 
 function App() {
   return (
@@ -37,8 +38,9 @@ function App() {
       <Effect/>
       <hr/> 
       <MemoEx/>
-      <CallBakEx/>*/}
-      <CounterReducer/>
+      <CallBakEx/>
+      <CounterReducer/>*/}
+      <HookReducer/>
     </div>
   );
 }

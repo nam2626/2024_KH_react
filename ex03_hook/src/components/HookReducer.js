@@ -1,3 +1,5 @@
+import { useCallback, useReducer } from "react";
+
 const reducer = (state, action) => {
   switch(action.type){
     case 'changeNumber':
@@ -13,10 +15,17 @@ export default function HookReducer() {
     avg: '',
     list: [],
   });
+
+  const changeNumber = useCallback((e) => {
+    dispatch({type:'changeNumber', payload : e.target});
+  },[]);
+
   return (
     <div>
       <h2>Reducer Hook</h2>
-      Num : {data.num} <input type="text" name="num"/>
+      <input type="text" name="num" onChange={changeNumber}/>
+      Num : {data.num} <br></br>
+      <input type="text" name="str"/> Str : {data.str}<br></br>
     </div>
 
   );
