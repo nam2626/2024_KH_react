@@ -1,4 +1,4 @@
-import { useCallback, useReducer } from "react";
+import { useCallback, useEffect, useReducer } from "react";
 
 const reducer = (state, action) => {
   switch(action.type){
@@ -7,6 +7,8 @@ const reducer = (state, action) => {
       return {...state, [action.payload.name] : value};
     case 'changeString':
       return {...state, str : action.payload};
+    case 'changeToday':
+      return {...state, today : new Date()};
   }
 }
 export default function HookReducer() {
@@ -26,6 +28,12 @@ export default function HookReducer() {
     dispatch({type:'changeString', payload : e.target.value});
   });
 
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch({type : 'changeToday'});
+    },3000);
+  },[data.today]);
+
   return (
     <div>
       <h2>Reducer Hook</h2>
@@ -33,6 +41,7 @@ export default function HookReducer() {
       Num : {data.num} <br></br>
       <input type="text" name="str" onChange={changeString}/>
       Str : {data.str}<br></br>
+      Date : {data.today.toLocaleString()}<br/>
     </div>
 
   );
