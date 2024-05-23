@@ -63,14 +63,14 @@ function reducer(state, action){
     return {list:state.list.concat(action.payload)};
   case 'updateTodo':
     let arr = state.list.map((obj) => {
-      if(obj.id === n){
+      if(obj.id === action.payload){
         obj.done = true;
       }
       return obj;
     });
     return {list : arr};
   case 'deleteTodo':
-    return {list : state.list.filter((obj) => obj.id !== n)};
+    return {list : state.list.filter((obj) => obj.id !== action.payload)};
   default:
     return state;
   }
@@ -83,12 +83,18 @@ export default function TodoTemplate() {
   const addTodo = useCallback((item) => {
     dispatch({type : 'addTodo', payload : item});
   },[]);
-
+  const deleteTodo = useCallback((item) => {
+    dispatch({type : 'deleteTodo', payload : item});
+  },[]);
+  const updateTodo = useCallback((item) => {
+    dispatch({type : 'updateTodo', payload : item});
+  },[]);
+  console.log(todo.list);
   return (
     <div>
       <FormComponent addTodo={addTodo}/>
       <hr></hr>
-      <ListCompoent list={todo.list}/>
+      <ListCompoent list={todo.list} deleteTodo={deleteTodo} updateTodo={updateTodo}/>
     </div>
   );
 }
