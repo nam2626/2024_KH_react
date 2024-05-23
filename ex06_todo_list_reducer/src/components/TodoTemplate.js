@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useCallback, useReducer } from "react";
 import FormComponent from "./FormComponent";
 import ListCompoent from "./ListComponents";
 //초기 랜덤 데이터
@@ -79,11 +79,16 @@ export default function TodoTemplate() {
   let [todo, dispatch] = useReducer(reducer, {
     list : makeItem()
   });
+  
+  const addTodo = useCallback((item) => {
+    dispatch({type : 'addTodo', payload : item});
+  },[]);
+
   return (
     <div>
-      <FormComponent/>
+      <FormComponent addTodo={addTodo}/>
       <hr></hr>
-      <ListCompoent/>
+      <ListCompoent list={todo.list}/>
     </div>
   );
 }
