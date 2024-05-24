@@ -7,6 +7,7 @@ import User from './components/User';
 import DashBoard from './components/DashBoard';
 import Profile from './components/Profile';
 import Setting from './components/Setting';
+import Data from './components/Data';
 function App() {
   const [id, setId] = useState('admin');
   return (
@@ -19,6 +20,8 @@ function App() {
             <li><Link to="/content">Content</Link></li>
             <li><Link to={"/user/"+id}>User</Link></li>
             <li><Link to="/dashboard">DashBoard</Link></li>
+            <li><Link to="/data?name=Tom&age=30">Data</Link></li>
+            <li><Link to="/data?name=John&age=22">Data</Link></li>
           </ul>
         </nav>
         <hr></hr>
@@ -27,6 +30,7 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path='/content' element={<Content/>}/>
           <Route path='/user/:id' element={<User/>}/>
+          <Route path='/data' element={<Data/>}/>
           <Route path='/dashboard' element={<DashBoard />}>
             <Route path='profile' element={<Profile/>}/>
             <Route path='setting' element={<Setting/>}/>
