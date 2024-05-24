@@ -1,4 +1,5 @@
-import {Link, Route, Router, Routes} from 'react-router-dom';
+import React from 'react';
+import {Link, Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Content from './components/Content';
@@ -19,6 +20,7 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path='/content' element={<Content/>}/>
         </Routes>
+        <hr></hr>
       </div>
     </Router>
   );
