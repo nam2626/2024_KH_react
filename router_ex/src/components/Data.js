@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 export default function Data() {
   const location = useLocation();
@@ -9,10 +9,14 @@ export default function Data() {
   const age = queryString.get('age');
 
   console.log(location);
+  const navigate = useNavigate();
   return (
     <div>
       <h2>Data - QueryString</h2>
       <p>{name} / {age}</p>
+      <button onClick={()=>{
+        navigate('/content');
+      }}>Content로 이동</button>
     </div>
   );
 }
