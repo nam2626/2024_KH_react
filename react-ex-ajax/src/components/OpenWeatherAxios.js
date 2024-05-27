@@ -1,5 +1,19 @@
 import {useRef} from 'react';
 import axios from 'axios';
+//POST로 전송하는 경우
+/* 
+  공식 예제 소스 : https://www.npmjs.com/package/axios
+  axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+*/
 export default function OpenWeatherAxios() {
   const result = useRef();
   const onWeaterHandler = () => {
