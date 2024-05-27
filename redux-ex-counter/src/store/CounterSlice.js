@@ -18,9 +18,12 @@ export const counterSlice = createSlice({
     },
     decrement : state => {
       state.value -= 1;
+    },
+    increamentByAmount : (state, action) => {
+      state.value += action.payload;
     }
   }
 });
 //각 케이스에 대한 리듀서 함수들을 생성
-export const {increament, decrement} = counterSlice.actions;
+export const {increament, decrement, increamentByAmount} = counterSlice.actions;
 export default counterSlice.reducer;
