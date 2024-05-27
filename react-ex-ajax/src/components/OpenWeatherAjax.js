@@ -1,4 +1,18 @@
 import {useRef} from 'react';
+
+/* 
+    fetch("API 주소",{
+      method:"POST",
+      body : JSON.stringfy({
+        id : id.current.value,
+        파라미터명 : 파라미터값,
+        ...
+      })
+    }).then((reponse) => reponse.json())
+    .then((result) => { 받아온 데이터 처리 영역 })
+    .catch((error) => { 에러 처리 영역 });
+
+*/
 export default function OpenWeatherAjax() {
   const result = useRef();
   const onWeaterHandler = () => {
