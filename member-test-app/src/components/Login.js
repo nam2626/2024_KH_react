@@ -1,0 +1,61 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+import './../css/login.css'; // CSS 파일 임포트
+import { saveToken } from '../store/MemberSlice';
+
+const Login = () => {
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:9999/login', { id : id, pwd : password });
+      if (response.status === 200) {
+        if(response.data.flag)
+          alert('로그인 성공');
+        else
+          alert('로그인 실패');
+        console.log('tokken 정보 : ',response.data.token);
+        dispatch(saveToken(response.data));
+        navigate('/main');
+      }
+    } catch (error) {
+      alert('로그인 실패');
+      console.error(error);
+    }
+  };
+
+  return (
+    <div className="login-container">
+      <h2 className="login-title">Login</h2>
+      <form onSubmit={handleSubmit} className="login-form">
+        <input
+          type="text"
+          placeholder="아이디"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+          required
+          className="login-input"
+        />
+        <br />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          className="login-input"
+        />
+        <br />
+        <button type="submit" className="login-button">Login</button>
+      </form>
+    </div>
+  );
+};
+
+export default Login;
