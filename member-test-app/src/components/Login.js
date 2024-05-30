@@ -32,7 +32,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2 className="login-title">Login</h2>
+      <h2 className="login-title">로그인 페이지</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <input
           type="text"
@@ -45,14 +45,14 @@ const Login = () => {
         <br />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="암호"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
           className="login-input"
         />
         <br />
-        <button type="submit" className="login-button">Login</button>
+        <button type="submit" className="login-button">로그인</button>
       </form>
     </div>
   );
