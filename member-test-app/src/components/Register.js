@@ -16,7 +16,7 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:9999/member/register', {
+      const response = await axios.post('http://nam3324.synology.me:32845/member/register', {
         userID:id,
         userName: userName,
         userPassword: password,

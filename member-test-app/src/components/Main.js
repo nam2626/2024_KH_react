@@ -19,7 +19,7 @@ export default function Main() {
     }
     const fetchData = async () => {
     try {
-        const response = await axios.get('http://localhost:9999/member/info', {
+        const response = await axios.get('http://nam3324.synology.me:32845/member/info', {
         params :{ token : info.token}
       });
       console.log(response);

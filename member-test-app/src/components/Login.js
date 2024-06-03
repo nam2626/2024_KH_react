@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:9999/login', { id : id, pwd : password });
+      const response = await axios.post('http://nam3324.synology.me:32845/member/login', { id : id, pwd : password });
       if (response.status === 200) {
         if(response.data.flag)
           alert('로그인 성공');
