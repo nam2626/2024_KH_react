@@ -1,6 +1,7 @@
 import './App.css';
 import OpenWeatherAjax from './components/OpenWeatherAjax';
 import OpenWeatherAxios from './components/OpenWeatherAxios';
+import TestAxios from './components/TestAxios';
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <OpenWeatherAjax/>
       <hr></hr>
       <OpenWeatherAxios/>
+      <hr></hr>
+      <TestAxios/>
     </div>
   );
 }
