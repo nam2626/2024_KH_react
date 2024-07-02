@@ -4,8 +4,6 @@ function App() {
   return (
     <div className="App">
       <BoardWrite/>
-      <hr></hr>
-      <button>글쓰기</button>
     </div>
   );
 }
