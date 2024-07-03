@@ -3,6 +3,7 @@ import axios from 'axios'
 import '../css/Home.css'
 export default function Home() {
   let [memberList, setMemberList] = useState([]);
+  let [gradeList, setgradeList] = useState([]);
 
   //액시오스로 전체 회원 데이터를 가져오는 코드
   useEffect(() => {
@@ -14,10 +15,16 @@ export default function Home() {
           console.log(response);
           setMemberList((v) => [...response.data]);
         })
+        axios.get('http://localhost:9999/grade/list')
+        .then(response => {
+          console.log(response);
+          setgradeList(response.data);
+        })
       }
       readData();
     },[]);
     console.log(memberList);
+    console.log(gradeList);
 
     return (
     <>
