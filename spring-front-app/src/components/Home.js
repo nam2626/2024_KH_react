@@ -25,7 +25,7 @@ export default function Home() {
     },[]);
     console.log(memberList);
     console.log(gradeList);
-    
+    if(memberList.length == 0 || gradeList.length == 0) return;
     return (
     <>
       <h2>회원 목록</h2>
