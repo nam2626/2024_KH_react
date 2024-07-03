@@ -25,16 +25,18 @@ export default function Home() {
     },[]);
     console.log(memberList);
     console.log(gradeList);
-
+    
     return (
     <>
       <h2>회원 목록</h2>
       <table>
         <thead>
-          <th>아이디</th>
-          <th>이름</th>
-          <th>닉네임</th>
-          <th>등급</th>
+          <tr>
+            <th>아이디</th>
+            <th>이름</th>
+            <th>닉네임</th>
+            <th>등급</th>
+          </tr>
         </thead>
         <tbody>
         {
@@ -44,10 +46,14 @@ export default function Home() {
                 <td>{item.boardMemberId}</td>
                 <td>{item.boardMemberName}</td>
                 <td>{item.boardMemberNick}</td>
-                <td>{item.boardMemberGrade}</td>
+                <td>
+                {
+                  gradeList.find((obj) => obj.gradeNo == item.boardMemberGrade).gradeName 
+                }
+                </td>
               </tr>
             );
-          })  
+          }) 
         }
         </tbody>
       </table>
