@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import '../css/Home.css'
+import { Link } from "react-router-dom";
 export default function Home() {
   let [memberList, setMemberList] = useState([]);
   let [gradeList, setgradeList] = useState([]);
@@ -43,7 +44,7 @@ export default function Home() {
           memberList.map((item,idx) => {
             return (
               <tr key={idx}>
-                <td>{item.boardMemberId}</td>
+                <td><Link to={'/board/'+item.boardMemberId}>{item.boardMemberId}</Link></td>
                 <td>{item.boardMemberName}</td>
                 <td>{item.boardMemberNick}</td>
                 <td>
