@@ -19,9 +19,24 @@ export default function Register() {
     readData();
   },[]);
   if(gradeList.length == 0) return;
+  const register = () => {
+    const obj = {
+      boardMemberId : txtId.current.value,
+      boardMemberPasswd : txtPass.current.value,
+      boardMemberName : txtName.current.value,
+      boardMemberNinck : txtNick.current.value,
+      boardMemberGrade : selectGrade.current.value,
+    }
+    console.log(obj);
+
+    axios.post('http://localhost:9999/member/insert',obj).then(respose => {
+      console.log(respose);
+    })
+
+  }
   return (
     <div>
-      <ul>
+      <ul id="register_form">
         <li><input type='text' ref={txtId} placeholder="아이디 입력"/></li>
         <li><input type='password' ref={txtPass} placeholder="암호 입력"/></li>
         <li><input type='text' ref={txtName} placeholder="이름 입력"/></li>
@@ -35,7 +50,7 @@ export default function Register() {
               })}
             </select>
         </li>
-        <li><button>회원가입</button><button>뒤로가기</button></li>
+        <li><button onClick={register}>회원가입</button><button>뒤로가기</button></li>
       </ul>
     </div>
   );
