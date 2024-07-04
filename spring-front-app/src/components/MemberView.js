@@ -34,10 +34,12 @@ export default function MemberView() {
     readData();
   },[]);
   const deleteClick = () => {
-    axios.delete('/member/delete',{id : txtId.current.value})
+    axios.delete('http://localhost:9999/member/delete',{
+      params : {id : txtId.current.value}
+  })
     .then(response => {
       console.log(response);
-      // navigate('/');
+      navigate('/');
     })
   }
   if(member == null || gradeList.length == 0){
