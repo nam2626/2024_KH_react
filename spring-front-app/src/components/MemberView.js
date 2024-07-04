@@ -52,7 +52,7 @@ export default function MemberView() {
               })}
             </select>
         </li>
-        <li><button>수정</button><button>삭제</button><button>뒤로가기</button></li>
+        <li><button>수정</button><button>삭제</button><button onClick={()=>window.history.back()}>뒤로가기</button></li>
       </ul>
     </div>
   ); 
