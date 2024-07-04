@@ -24,13 +24,16 @@ export default function Register() {
       boardMemberId : txtId.current.value,
       boardMemberPasswd : txtPass.current.value,
       boardMemberName : txtName.current.value,
-      boardMemberNinck : txtNick.current.value,
+      boardMemberNick : txtNick.current.value,
       boardMemberGrade : selectGrade.current.value,
     }
     console.log(obj);
 
     axios.post('http://localhost:9999/member/insert',obj).then(respose => {
       console.log(respose);
+      //경고창으로 메세지 출력
+      //회원등록이 완료되었을 때만 Home으로 이동
+      
     })
 
   }
