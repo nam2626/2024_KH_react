@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function Register() {
   let txtId = useRef();
@@ -8,6 +9,7 @@ export default function Register() {
   let txtNick = useRef();
   let selectGrade = useRef();
   let [gradeList, setgradeList] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const readData = async () => {
       axios.get('http://localhost:9999/grade/list')
@@ -29,11 +31,16 @@ export default function Register() {
     }
     console.log(obj);
 
-    axios.post('http://localhost:9999/member/insert',obj).then(respose => {
-      console.log(respose);
+    axios.post('http://localhost:9999/member/insert',obj).then(response => {
+      console.log(response);
       //경고창으로 메세지 출력
+      alert(response.data.msg);
       //회원등록이 완료되었을 때만 Home으로 이동
-      
+      if(response.data.result){
+        navigate("/");
+      }
+
+
     })
 
   }
