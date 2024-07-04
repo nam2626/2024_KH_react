@@ -33,6 +33,13 @@ export default function MemberView() {
     }
     readData();
   },[]);
+  const deleteClick = () => {
+    axios.delete('/member/delete',{id : txtId.current.value})
+    .then(response => {
+      console.log(response);
+      // navigate('/');
+    })
+  }
   if(member == null || gradeList.length == 0){
     return <div>회원 데이터를 로딩중입니다.</div>
   }
@@ -52,7 +59,7 @@ export default function MemberView() {
               })}
             </select>
         </li>
-        <li><button>수정</button><button>삭제</button><button onClick={()=>window.history.back()}>뒤로가기</button></li>
+        <li><button>수정</button><button onClick={deleteClick}>삭제</button><button onClick={()=>window.history.back()}>뒤로가기</button></li>
       </ul>
     </div>
   ); 
