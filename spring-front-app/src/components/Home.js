@@ -44,7 +44,7 @@ export default function Home() {
           memberList.map((item,idx) => {
             return (
               <tr key={idx}>
-                <td><Link to={'/board/'+item.boardMemberId}>{item.boardMemberId}</Link></td>
+                <td><Link to={'/member/'+item.boardMemberId}>{item.boardMemberId}</Link></td>
                 <td>{item.boardMemberName}</td>
                 <td>{item.boardMemberNick}</td>
                 <td>
