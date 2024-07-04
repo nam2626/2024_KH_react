@@ -42,6 +42,20 @@ export default function MemberView() {
       navigate('/');
     })
   }
+  const updateClick = () => {
+    const obj = {
+      boardMemberId : txtId.current.value,
+      boardMemberPasswd : txtPass.current.value,
+      boardMemberName : txtName.current.value,
+      boardMemberNick : txtNick.current.value,
+      boardMemberGrade : selectGrade.current.value,
+    }
+    axios.put('http://localhost:9999/member/update',obj)
+    .then(response => {
+      console.log(response);
+      navigate('/');
+    })
+  }
   if(member == null || gradeList.length == 0){
     return <div>회원 데이터를 로딩중입니다.</div>
   }
@@ -50,8 +64,8 @@ export default function MemberView() {
       <ul id="register_form">
         <li><input type='text' ref={txtId} readOnly value={member.boardMemberId}/></li>
         <li><input type='password' ref={txtPass} placeholder="암호 입력"/></li>
-        <li><input type='text' ref={txtName} placeholder="이름 입력" value={member.boardMemberName}/></li>
-        <li><input type='text' ref={txtNick} placeholder="닉네임 입력" value={member.boardMemberNick}/></li>
+        <li><input type='text' ref={txtName} placeholder="이름 입력" defaultValue={member.boardMemberName}/></li>
+        <li><input type='text' ref={txtNick} placeholder="닉네임 입력" defaultValue={member.boardMemberNick}/></li>
         <li>
             <select ref={selectGrade}>
               {gradeList.map((item,idx) => {
@@ -61,7 +75,7 @@ export default function MemberView() {
               })}
             </select>
         </li>
-        <li><button>수정</button><button onClick={deleteClick}>삭제</button><button onClick={()=>window.history.back()}>뒤로가기</button></li>
+        <li><button onClick={updateClick}>수정</button><button onClick={deleteClick}>삭제</button><button onClick={()=>window.history.back()}>뒤로가기</button></li>
       </ul>
     </div>
   ); 
